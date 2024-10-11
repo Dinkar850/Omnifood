@@ -150,6 +150,8 @@
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
 
   .main-nav-list {
