@@ -1,0 +1,281 @@
+/*
+--01 Typography
+Base Font: Rubik
+
+-FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-FONT WEIGHTS
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+-LINE HEIGHTS: 
+Default: 1
+Main heading: 1.05
+Para: 1.7
+Med: 1.2
+
+-LETTER SPACING
+
+
+
+--02 COLORS
+Primary: #e67e22
+
+Tints: #eea564,#f5cfb6, 
+#fdf1e9, 
+
+Shades: #cf671f
+
+Accents: 
+
+Greys: #555, #333, 
+
+
+--03 SHADOWS
+
+--04 BORDER RADIUS
+
+Border: 1rem
+
+
+--05 WHITESPACE
+-Spacing: 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus{
+  outline: none;
+  box-shadow: 0 0 0 0.8rem #e76e2280;
+}
+
+/* defining size of rem as 10px */
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+  overflow-x: hidden;
+}
+
+/***********************************************/
+/* GENERALREUSABLE COMPONENTS*/
+/***********************************************/
+
+strong {
+  font-weight: 500;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 6.2rem;
+  margin-bottom: 3.2rem;
+  line-height: 1.05;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #cf671f;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  letter-spacing: 0.75px;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  border-radius: 1rem;
+  padding: 1.6rem 3.2rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  /* only necessary for btn  */
+  border:none;
+  cursor: pointer;
+  
+
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #cf671f;
+  background-color: #e76e22;
+  color: #fff;
+}
+
+.btn--full:hover {
+  background-color: #cf671f;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn--full:active {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(0.2rem);
+  outline:none;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover {
+  background-color: #fdf1e9;
+  box-shadow: inset 0 0 0 3px #fff;
+  transition: all 0.3s ease;
+}
+
+.btn--form{
+  background-color: #45260a;
+  color: #fdf1e9;
+  align-self: end;
+  padding: 1.2rem;
+
+}
+
+.btn--form:hover{
+  background-color: #fff;
+  color: #555;
+}
+
+.link:link,
+.link:visited {
+  text-decoration: none;
+  color: #e76e22;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.link::after {
+  color: #e76e22;
+  text-decoration: none;
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 1px;
+  background: currentcolor;
+  transform: scaleX(0);
+  transition: transform 300ms ease-in-out;
+}
+
+.link:hover::after {
+  transform: scaleX(1);
+  /* transition: transform 300ms ease-in-out; */
+}
+
+.container {
+  /* 140rem  */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+}
+
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid-center-vertically {
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  padding: 0 3.2rem;
+  flex-direction: column;
+  gap: 1.6rem;
+  margin-top: 4.8rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  line-height: 1.2;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e76e22;
+}
+
